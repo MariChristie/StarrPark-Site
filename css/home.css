@@ -1,0 +1,56 @@
+body { 
+    color:rgb(0, 0, 0);
+    background-color: rgb(43, 38, 73);
+}
+
+.container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: vh; 
+}
+
+#searchbar {
+    width: 600px;
+    height: 40px;
+    padding-left: 15px; 
+    color: rgb(255, 255, 255);
+    background-color: rgb(43, 38, 73);
+    border: 1px solid  rgb(96, 91, 218);
+    border-radius: 20px; 
+    font-size: 18px;
+}
+
+.colette {
+    width: 100px;
+    height: 100px;
+
+    position: absolute;
+    top: 10px;   
+    left: 40px;
+}
+
+.fazer-login {
+    color: rgb(255, 255, 255);
+    font-size: 22px;;
+    border: 1px solid rgb(96, 91, 218);
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+
+    position: absolute;
+    top: 10px;   
+    right: 40px;
+}
+
+.filtro {
+    width: 80px;
+    height: 60px;
+    right: 700px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(106, 97, 156);
+    font-size: 18px;
+}
+
+
+
