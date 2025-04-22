@@ -44,13 +44,20 @@ body {
 }
 
 .filtro {
-    width: 80px;
-    height: 60px;
-    right: 700px;
-    color: rgb(255, 255, 255);
-    background-color: rgb(106, 97, 156);
-    font-size: 18px;
+    margin: 0 auto;
+    width: 840px;
+    height: 100px;    
+    padding: 2 rem;
+
 }
 
-
+.objects {
+    float: left;
+    background-color: white;
+    width: 125px;
+    gap: 1rew;
+    line-height: 125px;
+    text-align: center;
+    margin: 10px;
+}
 

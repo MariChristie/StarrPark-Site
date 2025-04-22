@@ -7,8 +7,8 @@
         {
             "type": "msedge",
             "request": "launch",
-            "name": "Open index.html",
-            "file": "c:\\Users\\liago\\OneDrive\\Área de Trabalho\\Programação\\Desenvolvimento web\\home.html"
+            "name": "Open home.html",
+            "file": "c:\\Users\\liago\\OneDrive\\Área de Trabalho\\Programação\\Desenvolvimento web\\StarPark-Site\\home.html"
         }
     ]
 }
