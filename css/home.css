@@ -44,20 +44,32 @@ body {
 }
 
 .filtro {
-    margin: 0 auto;
-    width: 840px;
-    height: 100px;    
-    padding: 2 rem;
+    width: 700px;
+    height: 50px;
 
+    position: absolute;
+    top: 50px;   
+    left: 100rx;
 }
 
-.objects {
+.buttons {
+    margin: 1 auto;
+    text-align: center;
+    padding: 2rem;
+}
+
+
+.box {
     float: left;
     background-color: white;
-    width: 125px;
-    gap: 1rew;
+    width: 250px;
     line-height: 125px;
     text-align: center;
     margin: 10px;
+    display: none;
+
 }
 
+.show {
+    display:block;
+}
