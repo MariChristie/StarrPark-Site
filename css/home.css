@@ -45,11 +45,11 @@ body {
 
 .filtro {
     width: 700px;
-    height: 50px;
+    height: 100px;
 
     position: absolute;
-    top: 50px;   
-    left: 100rx;
+    top: 40px;   
+    left: 30px;
 }
 
 .buttons {
@@ -62,12 +62,13 @@ body {
 .box {
     float: left;
     background-color: white;
-    width: 250px;
+    width: 340px;
+    height: 170px;
     line-height: 125px;
     text-align: center;
-    margin: 10px;
+    border-radius: 10px;
     display: none;
-
+    margin: 10px;
 }
 
 .show {
