@@ -10,7 +10,7 @@
 
 <body>
     
-    <div class="container">
+    <div class="container-busca">
         <input type="text" id="searchbar" placeholder="Pesquisar">
         <button type="submit">
         <img src="../imagens/lupa.png" id="lupa" width="30" height="30" placeholder="Pesquisar">
@@ -23,22 +23,14 @@
 
     <a href="login.html" class="fazer-login">Fazer login</a>
 
-    <section class="filtro">
-        <div class="buttons">
-            <button class="btn" onclick="filterelements('Todos')">Todos</button>
-            <button class="btn" onclick="filterelements('Ação')"> Ação </button>
-            <button class="btn" onclick="filterelements('Aventura')"> Aventura </button>
-        </div>
-
-    <div class="filtro">
-        <div class="box Todos">Todos</div>
-        <div class="box Ação">Ação</div>
-        <div class="box Aventura">Aventura</div>
+    <div class="container-filtro">
+        <!--Filter buttons-->
+        <button class="active" data-name="all">All</button>
+        <button data-name="tutorial">Tutorial</button>
+        <button data-name="gameplay">Gameplay</button>
+        <button data-name="lore">Lore</button>
     </div>
-    </section>
-
-    <script src="../js/home.js"></script>
-
+    
 </body>
 </html>
 

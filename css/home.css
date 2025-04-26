@@ -3,7 +3,7 @@ body {
     background-color: rgb(43, 38, 73);
 }
 
-.container {
+.container-busca {
     display: flex;
     justify-content: center; 
     align-items: center; 
@@ -22,8 +22,8 @@ body {
 }
 
 .colette {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 
     position: absolute;
     top: 10px;   
@@ -43,34 +43,32 @@ body {
     right: 40px;
 }
 
-.filtro {
-    width: 700px;
-    height: 100px;
+.container-filtro {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
     position: absolute;
-    top: 40px;   
-    left: 30px;
-}
-
-.buttons {
-    margin: 1 auto;
-    text-align: center;
-    padding: 2rem;
+    top: 100px;   
+    right: 700px;
 }
 
 
-.box {
-    float: left;
+button {
+    padding: 5px 20px;
+    font-size: 18px;
     background-color: white;
-    width: 340px;
-    height: 170px;
-    line-height: 125px;
-    text-align: center;
-    border-radius: 10px;
-    display: none;
-    margin: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;    
 }
 
-.show {
-    display:block;
+button.active{
+    background-color: blue;
+    color: white;
+
 }
+
+
+
+
