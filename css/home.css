@@ -1,20 +1,22 @@
 body {
+    margin: 0;
+    font-family: sans-serif;
     color: white;
     background-color: rgb(60, 40, 73);
-    font-family: sans-serif;
-    margin: 0;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 60px;
+    padding: 15px 40px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .colette {
     width: 160px;
-    height: 40px;
+    height: auto;
 }
 
 .search-box {
@@ -36,12 +38,12 @@ body {
 }
 
 .fazer-login {
-    color: rgb(255, 255, 255);
+    color: white;
     font-size: 15px;
     font-weight: bold;
     border: 1px solid rgb(96, 91, 218);
-    padding: 5px 10px;
-    border-radius: 20px; 
+    padding: 5px 15px;
+    border-radius: 20px;
     text-decoration: none;
 }
 
@@ -51,24 +53,21 @@ button {
     font-weight: bold;
     border: none;
     background-color: rgb(107, 95, 173);  
-    color: rgb(255, 255, 255);
-    border-radius: 6px;
-    cursor: pointer;    
-    white-space: nowrap;
-
-}
-
-
-button.active{
-    background-color: rgb(111, 8, 143);
     color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
 }
 
+button.active {
+    background-color: rgb(111, 8, 143);
+}
 
 .container-filtro {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
-    margin: 30px 60px;
-    padding-bottom: 10px;
+    margin: 30px 40px;
 }
+
 
