@@ -53,18 +53,18 @@ body {
     max-width: 700px;
     margin: 16px auto;
     border-radius: 4px;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
 
 }
 
+
 .container-filtro svg {
     width: 24px;
     height: 24px;
-    padding: 8px;
-    cursor: pointer;
     color: white;
-    display: block;
+    background-color: transparent;
+    transition: background-color 0.2s;
 }
 
 .container-filtro ul {
@@ -82,7 +82,6 @@ body {
 .container-filtro ul::-webkit-scrollbar {
     display: none;
 }
-
 
 .container-filtro a {
     color: white;
@@ -105,20 +104,32 @@ body {
 .container-filtro .left-arrow {
     position: absolute;
     height: 100%;
-    width: 100px;
+    width: 140px;
     top: 0;
-    align-items: none;
+    display: flex;
+    align-items: center;
     padding: 0 10px;
+    z-index: 20;
+    opacity: 2
+}
+
+.container-filtro .right-arrow {
+    right: 0;
+    background: linear-gradient(to left, rgba(60, 40, 73, 0.9) 30%, transparent);
+}
+
+.container-filtro .left-arrow {
+    left: 0;
+    background: linear-gradient(to right, rgba(60, 40, 73, 0.9) 30%, );
 }
 
 .container-filtro .right-arrow.active,
 .container-filtro .left-arrow.active {
-  display: flex;
-
+    position: flex;
 }
 
 .container-filtro svg:hover {
-    background-color: rgb(134, 98, 158);
-    border-radius: 20px;
+    background-color: rgb(60, 40, 73);
+    border-radius: 50%;
 
 }
