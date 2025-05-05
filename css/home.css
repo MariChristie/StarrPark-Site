@@ -50,10 +50,11 @@ body {
 .container-filtro {
     font-family: "Roboto", sans-serif;
     background-color: rgb(60, 40, 73);
-    max-width: 700px;
+    max-width: 2000px;
     margin: 16px auto;
     border-radius: 4px;
     overflow: visible;
+    left: 60px;
     position: relative;
 
 }
@@ -104,7 +105,7 @@ body {
 .container-filtro .left-arrow {
     position: absolute;
     height: 100%;
-    width: 140px;
+    width: 160px;
     top: 0;
     display: flex;
     align-items: center;
