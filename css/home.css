@@ -63,9 +63,11 @@ body {
 .container-filtro svg {
     width: 24px;
     height: 24px;
+    padding: 8px;
     color: white;
-    background-color: transparent;
-    transition: background-color 0.2s;
+    border-radius:50%;
+    pointer-events: auto;
+
 }
 
 .container-filtro ul {
@@ -77,7 +79,12 @@ body {
     overflow-x: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    scroll-behavior: smooth;
 
+}
+
+.container-filtro ul.dragging {
+    scroll-behavior: auto;
 }
 
 .container-filtro ul::-webkit-scrollbar {
