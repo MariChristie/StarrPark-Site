@@ -72,8 +72,8 @@ body {
 
 .container-filtro ul {
     display: flex;
-    gap: 16px;
-    padding: 12px 24px;
+    gap: 14px;
+    padding: 1px 24px;
     margin: 0;
     list-style: none;
     overflow-x: scroll;
