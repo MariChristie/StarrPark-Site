@@ -1,20 +1,20 @@
 const tabs = document.querySelectorAll(".container-filtro a");
-const rightArrow = document.querySelector(
-    ".container-filtro .right-arrow svg"
-);
-const leftArrow = document.querySelector (".container-filtro .leftarrow svg")
+const rightArrow = document.querySelector(".container-filtro .right-arrow");
+const leftArrow = document.querySelector (".container-filtro .left-arrow");
+
 const tabsList = document.querySelector(".container-filtro ul");
-const leftArrowContainer = document.querySelector(
-    ".container-filtro .left-arrow"
-);
-const rightArrowContainer = document.querySelector(
-    ".container-filtro .right-arrow"
-);
 
 const removeAllActiveClasses = () => {
     tabs.forEach(tab => {
         tab.classList.remove("active");
     });
+};
+
+const showHideArrows = () => {
+    const maxScrollLeft = tabsList.scrollWidth - tabsList.clientWidth;
+
+    leftArrow.style.display = tabsList.scrollLeft > 0 ? "flex" : "none";
+    rightArrow.style.display = tabsList.scrollLeft < maxScrollLeft ? "flex" : "none";
 };
 
 tabs.forEach((tab) => {
@@ -44,15 +44,17 @@ const manageIcons = () => {
 
 rightArrow.addEventListener("click", () => {
     tabsList.scrollLeft += 200;
-    manageIcons();
+setTimeout(showHideArrows, 100); 
 });
 
 leftArrow.addEventListener("click", () => {
     tabsList.scrollLeft -= 200;
-    manageIcons();
+setTimeout(showHideArrows, 100); 
 });
 
 tabsList.addEventListener("scroll", manageIcons);
+window.addEventListener("load", showHideArrows);       
+window.addEventListener("resize", showHideArrows);   
 
 let dragging = false;
 

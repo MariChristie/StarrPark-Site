@@ -1,4 +1,5 @@
 body {
+    overflow-x: hidden; 
     margin: 0;
     font-family: sans-serif;
     color: white;
@@ -50,13 +51,14 @@ body {
 .container-filtro {
     font-family: "Roboto", sans-serif;
     background-color: rgb(60, 40, 73);
-    max-width: 2000px;
-    margin: 16px auto;
+    width: 100%;
+    max-width: 1200px; 
+    margin: 16px auto;  
+    padding: 0 60px;    
     border-radius: 4px;
-    overflow: visible;
-    left: 60px;
+    overflow: hidden;
     position: relative;
-
+    white-space: nowrap;
 }
 
 
@@ -72,15 +74,21 @@ body {
 
 .container-filtro ul {
     display: flex;
-    gap: 14px;
-    padding: 1px 24px;
+    gap: 12px;
+    padding: 2px 0px;    
+    padding-left: 0;
+    padding-right: 0;
     margin: 0;
     list-style: none;
-    overflow-x: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     scroll-behavior: smooth;
+    white-space: nowrap;
+}
 
+.container-filtro li {
+    margin: 0;
+    padding: 0;
 }
 
 .container-filtro ul.dragging {
@@ -112,13 +120,14 @@ body {
 .container-filtro .left-arrow {
     position: absolute;
     height: 100%;
-    width: 160px;
+    width: 64px;
     top: 0;
     display: flex;
     align-items: center;
-    padding: 0 10px;
+    justify-content: center;
     z-index: 20;
-    opacity: 2
+    background-color: rgb(60, 40, 73); 
+    pointer-events: auto;
 }
 
 .container-filtro .right-arrow {
