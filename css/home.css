@@ -2,7 +2,7 @@ body {
     overflow-x: hidden; 
     margin: 0;
     font-family: sans-serif;
-    background-color: rgb(60, 40, 73);
+    background-color: rgb(8, 125, 160);
 }
 
 .header {
@@ -31,8 +31,8 @@ body {
     height: 40px;
     padding-left: 15px;
     color: white;
-    background-color: rgb(60, 40, 73);
-    border: 1px solid rgb(96, 91, 218);
+    background-color: rgb(8, 125, 160);
+    border: 1px solid rgb(0, 0, 0);
     border-radius: 20px;
     font-size: 18px;
 }
@@ -50,7 +50,7 @@ body {
 
 .container-filtro {
     font-family: "Roboto", sans-serif;
-    background-color: rgb(60, 40, 73);
+    background-color: rgb(8, 125, 160);
     width: 100%;
     max-width: 1200px; 
     margin: 16px auto;  
@@ -102,7 +102,7 @@ body {
 .container-filtro a {
     color: white;
     text-decoration: none;
-    background-color: rgb(134, 98, 158);
+    background-color: rgb(3, 65, 122);
     padding: 4px 24px;
     display: inline-block;
     border-radius: 4px;
@@ -126,7 +126,7 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 20;
-    background-color: rgb(60, 40, 73); 
+    background-color: rgb(8, 125, 160);
     pointer-events: auto;
 }
 
