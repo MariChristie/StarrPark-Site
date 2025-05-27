@@ -1,0 +1,79 @@
+body {
+    overflow-x: hidden; 
+    margin: 0;
+    font-family: sans-serif;
+    background-color: rgb(8, 125, 160);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.colette {
+    width: 160px;
+    height: auto;
+}
+
+.fazer-login {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid rgb(96, 91, 218);
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+* {
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+} 
+
+.heading{
+    color:rgb(96, 91, 218);
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+}
+
+.container {
+    display: grind;
+    grind-template-columns: 2fr 1fr;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 5px 5%;
+}
+
+.container .main-video {
+    background: wihte;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.container .main-video video{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.container .main-video .title{
+    color: black;
+    font-size: 23px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.container .video-list{
+    background: white;
+    border-radius: 5px;
+    height: 520px;
+overflow-y: scroll;;
+}
