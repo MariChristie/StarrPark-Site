@@ -17,6 +17,10 @@
             <img src="../imagens/colette.png" class="colette" alt="Logo Colette">
         </a>
 
+        <div class="search-box">
+            <input type="text" class="search-text" placeholder="Search">
+        </div>
+
         <a href="login.html" class="fazer-login">Sign in</a>
     </header>
     
@@ -34,13 +38,37 @@
     <div class="video-list">
         <div class="vid">
             <video src="/video/gameplay1.mp4" muted></video>
-            <h3 class="title">01. video title</h3>
+            <h3 class="title">02. video title</h3>
         </div>
         <div class="vid">
             <video src="/video/gameplay3.mp4"muted></video>
-            <h3 class="title">01. video title</h3>
+            <h3 class="title">03. video title</h3>
         </div>    
+    </div>
+
 </div>
+
+<script>
+
+const videoItems = document.querySelectorAll('.video-list .vid');
+const mainVideo = document.querySelector('.main-video video');
+const mainTitle = document.querySelector('.main-video .title');
+
+videoItems.forEach(video =>{
+    video.onclick = () =>{
+        videoItems.forEach(vid => vid.classList.remove('active'));
+        video.classList.add('active');
+
+        const src = video.children[0].getAttribute('src');
+        const text = video.children[1].innerHTML;
+        
+        mainVideo.src = src;
+        mainTitle.innerHTML = text;
+        mainVideo.play();
+    };
+});
+
+</script>
 
 </body>
 </html>
