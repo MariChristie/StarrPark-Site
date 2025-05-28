@@ -25,6 +25,13 @@ body {
     justify-content: center;
 }
 
+::-webkit-input-placeholder {
+   color: rgb(199, 198, 198);
+   font-size: 15px;
+   text-decoration: none;
+   font-family: sans-serif;
+}
+
 .search-text {
     width: 100%;
     max-width: 500px;
@@ -32,7 +39,7 @@ body {
     padding-left: 15px;
     color: white;
     background-color: rgb(8, 125, 160);
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgb(255, 238, 0);
     border-radius: 20px;
     font-size: 18px;
 }
@@ -41,12 +48,27 @@ body {
     color: white;
     font-size: 15px;
     font-weight: bold;
-    border: 1px solid rgb(96, 91, 218);
+    border: 1px solid rgb(255, 238, 0);
     padding: 10px 30px;
     border-radius: 20px;
     font-size: 15px;
     text-decoration: none;
 }
+
+* {
+    margin: 0; padding:0;
+    text-transform: capitalize;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+} 
+
+.heading{
+    color:rgb(96, 91, 218);
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+}
+
 
 .container-filtro {
     font-family: "Roboto", sans-serif;

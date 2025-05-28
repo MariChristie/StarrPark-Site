@@ -25,6 +25,13 @@ body {
     justify-content: center;
 }
 
+::-webkit-input-placeholder {
+   color: rgb(199, 198, 198);
+   font-size: 15px;
+   text-decoration: none;
+   font-family: sans-serif;
+}
+
 .search-text {
     width: 100%;
     max-width: 500px;
@@ -32,7 +39,7 @@ body {
     padding-left: 15px;
     color: white;
     background-color: rgb(8, 125, 160);
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgb(255, 238, 0);
     border-radius: 20px;
     font-size: 18px;
 }
@@ -41,7 +48,7 @@ body {
     color: white;
     font-size: 15px;
     font-weight: bold;
-    border: 1px solid rgb(96, 91, 218);
+    border: 1px solid rgb(255, 238, 0);
     padding: 10px 30px;
     border-radius: 20px;
     font-size: 15px;
@@ -63,6 +70,15 @@ body {
     padding: 10px;
 }
 
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
 .container {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -71,32 +87,37 @@ body {
 }
 
 .main-video {
-    background: white;
+    background: rgb(8, 125, 160);
     border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 0 15px black;
 }
 
 .main-video video{
+    box-shadow: 0 0 20px rgb(8, 79, 136);
     width: 100%;
     border-radius: 10px;
+
 }
 
 .main-video .title{
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 23px;
     margin-top: 10px;
 }
 
 .video-list{
-    background: white;
-    border-radius: 10px;
+    background: rgb(8, 125, 160);
+    border: 1px solid rgb(255, 238, 0);
+    width: 450px;
     padding: 10px;
-    height: 520px;
+    min-height: 100px;
+    max-height: 520px;
+    height: auto;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    border-radius: 20px;
     gap: 10px;
+    color: rgb(255, 255, 255);
 }
 
 .container .video-list::-webkit-scrollbar {
@@ -116,6 +137,8 @@ body {
 }
 
 .video-list .vid{
+    flex: 0 0 auto;
+    margin-right: 8px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -132,7 +155,7 @@ body {
 }
 
 .container .video-list .vid.hover{
-    background: white
+    background: rgb(8, 125, 160);
 }
 
 .container .video-list .vid.active{
@@ -141,12 +164,11 @@ body {
 }
 
 .container .video-list .vid.acitve .title{
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 17px;
 }
 
 @media(max-width: 768px){
-
     .container{
         grid-template-columns: 1fr;
     }
@@ -158,9 +180,12 @@ body {
     }
 
     .video-list .vid {
-        min-width: 150px;
+        flex: 0 0 auto;
+        width: 150px;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        margin-right: 10px;
+
     }
 
     .video-list .vid video {
@@ -169,7 +194,16 @@ body {
 
     .video-list .vid .title {
         font-size: 14px;
-        text-align: left;
+        text-align: center;
 
     }
+}
+
+.container-player {
+    max-width: 900px;
+    width: 98%;
+}
+
+.container video{
+    width: 100%;
 }
