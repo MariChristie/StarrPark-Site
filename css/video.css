@@ -1,9 +1,3 @@
-body {
-    overflow-x: hidden; 
-    margin: 0;
-    font-family: sans-serif;
-    background-color: rgb(8, 125, 160);
-}
 
 .header {
     display: flex;
@@ -199,11 +193,49 @@ body {
     }
 }
 
+body {
+    min-height: 100hv;
+    background: white;
+    overflow-x: hidden; 
+    margin: 0;
+    font-family: sans-serif;
+    background-color: rgb(8, 125, 160);
+}
+
+
+body, .video-controls, .video-timer, .options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .container-player {
     max-width: 900px;
     width: 98%;
+    position: relative;
+    background: black;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
-.container video{
+.wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.wrapper::before {
+    content: "";
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    background: linear-gradient(to top, black), transparent);
+    height: calc(100%- 35px);
+}
+
+.container-player video{
     width: 100%;
 }
