@@ -1,4 +1,5 @@
 
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -194,48 +195,221 @@
 }
 
 body {
-    min-height: 100hv;
-    background: white;
-    overflow-x: hidden; 
+    min-height: 100vh; 
+    background-color: rgb(8, 125, 160);
     margin: 0;
     font-family: sans-serif;
-    background-color: rgb(8, 125, 160);
-}
-
-
-body, .video-controls, .video-timer, .options {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow-x: hidden;
+    display: block; 
 }
 
 .container-player {
     max-width: 900px;
     width: 98%;
+    margin: 20px auto;
     position: relative;
     background: black;
     border-radius: 5px;
     overflow: hidden;
+    padding-bottom: 60px;
+}
+
+.container-player video {
+    width: 100%;
+    display: block;
 }
 
 .wrapper {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: -100px;
     z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.container-player:hover .wrapper {
+    opacity: 1;
 }
 
 .wrapper::before {
     content: "";
     bottom: 0;
     width: 100%;
-    z-index: -1;
+    height: calc(100% + 35px);
     position: absolute;
-    background: linear-gradient(to top, black), transparent);
-    height: calc(100%- 35px);
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    pointer-events: none;
+    z-index: -1;
 }
 
-.container-player video{
+.video-controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    list-style: none;
+}
+
+.options button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.video-timeline {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.video-timeline .progress-area {
+    height: 3px;
+    position: relative;
+    background: whitesmoke;
+}
+
+.progress-area {
+    height: 5px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #2289ff;
+    border-radius: 3px;
+    position: relative;
+}
+
+.progress-area .progress-bar::before{
+    content: "";
+    right: 0;
+    top: 50%;
+    height: 13px;
+    width: 13px;
+    background: inherit;
+    position: absolute;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.video-timeline:hover .progress-bar::before {
+    opacity: 1;
+}
+
+.progress-area span, .progress-area .progress-bar::before{
+    display: none;
+}
+
+.video-timeline:hover .progress-area span, 
+.video-timeline:hover .progress-area .progress-bar::before{
+    display: block;
+}
+
+.video-controls{
+    padding: 5px 20px 10px;
+}
+
+.video-controls .options{
     width: 100%;
+}
+
+.video-controls .options:first-child{
+    justify-content: flex-start;
+
+}
+.video-controls .options:last-child{
+    justify-content: flex-end;
+
+}
+
+.video-controls .options{
+    width: 100%;
+}
+
+.speed-options {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    border-radius: 4px;
+    padding: 5px 0;
+    list-style: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+options button{
+    width: 40px;
+    height: 40px;
+    border: none;
+    color:rgb(0, 163, 212);
+    cursor: pointer;
+    font-size: 19px;
+    background: none;
+}
+
+.options button :where(i, span){
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+}
+
+.playback-content:hover .speed-options {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.options input{
+    height: 4px;
+    max-width: 75px;
+}
+
+.options .video-timer {
+    font-size: 14px;
+    color: white;
+    margin-left: 15px;
+}
+.video-timer .separator{
+    font-size: 16px;
+    margin: 0 5px;
+    font-family: "Open Sans";
+}
+
+.playbak-content{
+    position: relative;
+}
+
+.playback.content .speed-options{
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    border-radius: 4px;
+    padding: 5px 0;
+    list-style: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.playback-content button:hover ~.speed-options{
+    opacity: 1;
+    pointer-events: auto;
+}
+.speed-options li{  
+    padding: 5px 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.speed-options li.active{
+    color: white;
+    background: black;
 }

@@ -71,8 +71,8 @@ videoItems.forEach(video =>{
 
 </script>
 
-<body class="video-page">
     <div class="container-player">
+        <video src="/video/brian.mp4"></video>
         <div class="wrapper">
             <div class="video-timeline">
                 <div class="progress-area">
@@ -83,11 +83,11 @@ videoItems.forEach(video =>{
             <ul class="video-controls">
             <li class="options left">
                 <buton class="volume"><i class="fa-solid fa-volume-high"></i></buton>
-                <input type="range">
+                <input type="range" class="volume-slider">
                 <div class="video-timer">
-                    <p class="current-time">00:00</p>
-                    <p class="separator"> / </p>
-                    <p class="video-duration">00:00</p>
+                    <span class="current-time">00:00</span>
+                    <span class="separator"> / </span>
+                    <span class="video-duration">00:00</span>
                 </div>
             </li>
             <li class="options center">
@@ -95,10 +95,19 @@ videoItems.forEach(video =>{
                 <button class="play-pause"><i class="fas fa-play"></i></button>
                 <button class="skip-forward"><i class="fas fa-forward"></i></button>
             </li>
-            <li class="options right"></li>
-                <button class="playback-speed">
-                    <span class="material-symbols-rounded">slow_motion_video</span>
-                </button>
+            <li class="options right">
+                <div class="playback-content">
+                     <button class="playback-speed">
+                         <span class="material-symbols-rounded">slow_motion_video</span>
+                     </button>
+                     <ul class="speed-options">
+                        <li>2x</li>
+                        <li>1.5x</li>
+                        <li class="active">cNormal</li>
+                        <li>0.75x</li>
+                        <li>0.5x</li>
+                     </ul>
+                </div>
                 <button class="pic-in-pic">
                     <span class="material-icons">picture_i_picture_alt</span>
                 </button>
@@ -106,9 +115,7 @@ videoItems.forEach(video =>{
             </li>
             </ul>
         </div>
-        <video src="/video/brian.mp4"></video>
     </div>
-</body>
 
 </body>
 </html>
