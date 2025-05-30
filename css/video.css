@@ -211,7 +211,7 @@ body {
     background: black;
     border-radius: 5px;
     overflow: hidden;
-    padding-bottom: 60px;
+    padding-bottom: 0px;
 }
 
 .container-player video {
@@ -223,7 +223,7 @@ body {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -100px;
+    bottom: 0px;
     z-index: 1;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -316,7 +316,8 @@ body {
 }
 
 .video-controls .options{
-    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .video-controls .options:first-child{
@@ -382,11 +383,11 @@ options button{
     font-family: "Open Sans";
 }
 
-.playbak-content{
+.playback-content{
     position: relative;
 }
 
-.playback.content .speed-options{
+.playback-content .speed-options{
     position: absolute;
     bottom: 40px;
     left: 0;
