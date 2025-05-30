@@ -248,7 +248,9 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
-    list-style: none;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
 }
 
 .options button {
@@ -318,6 +320,14 @@ body {
 .video-controls .options{
     display: flex;
     align-items: center;
+    height: 100%;
+}
+
+.options button i {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .video-controls .options:first-child{
@@ -346,7 +356,7 @@ body {
     transition: opacity 0.2s ease;
 }
 
-options button{
+.options button{
     width: 40px;
     height: 40px;
     border: none;
@@ -356,10 +366,45 @@ options button{
     background: none;
 }
 
+.options.center {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    flex: 1; 
+}
+
 .options button :where(i, span){
     width: 100%;
     height: 100%;
     line-height: 40px;
+}
+
+.options.right {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+.options.right button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.options.right button i,
+.options.right button span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
 }
 
 .playback-content:hover .speed-options {
@@ -414,3 +459,4 @@ options button{
     color: white;
     background: black;
 }
+
