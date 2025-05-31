@@ -278,6 +278,10 @@ body {
     background: rgba(255,255,255,0.2);
     border-radius: 3px;
     position: relative;
+    overflow: hidden;
+    position: absolute; 
+    left: 0; 
+    top: 0; 
 }
 
 .progress-bar {
@@ -306,11 +310,6 @@ body {
 
 .progress-area span, .progress-area .progress-bar::before{
     display: none;
-}
-
-.video-timeline:hover .progress-area span, 
-.video-timeline:hover .progress-area .progress-bar::before{
-    display: block;
 }
 
 .video-controls{
