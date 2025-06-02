@@ -31,7 +31,7 @@
 
     <div class="main-video">
         <div class="video">
-            <video src="/video/gameplay1.mp4"controls autoplay></video>
+            <video src="/video/gameplay1.mp4"controls autoplay muted></video>
             <h3 class="title">Show my Brawlers </h3>
         </div>
     </div>
@@ -83,7 +83,7 @@ videoItems.forEach(video =>{
             <ul class="video-controls">
             <li class="options left">
                 <button class="volume"><i class="fa-solid fa-volume-high"></i></button>
-                <input type="range" class="volume-slider">
+                <input type="range" class="volume-slider" min="0" max="1" step="any">
                 <div class="video-timer">
                     <span class="current-time">00:00</span>
                     <span class="separator"> / </span>
@@ -101,11 +101,11 @@ videoItems.forEach(video =>{
                          <span class="material-symbols-rounded">slow_motion_video</span>
                      </button>
                      <ul class="speed-options">
-                        <li>2x</li>
-                        <li>1.5x</li>
-                        <li class="active">cNormal</li>
-                        <li>0.75x</li>
-                        <li>0.5x</li>
+                        <li data-speed="2">2x</li>
+                        <li data-speed="1.5">1.5x</li>
+                        <li data-speed="1" class="active">Normal</li>
+                        <li data-speed="0.75">0.75x</li>
+                        <li data-speed="0.5">0.5x</li>
                      </ul>
                 </div>
                 <button class="pic-in-pic">

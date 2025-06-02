@@ -204,19 +204,26 @@ body {
 }
 
 .container-player {
-    max-width: 900px;
-    width: 98%;
-    margin: 20px auto;
     position: relative;
+    max-width: 900px;
+    width: 100%;
+    margin: 20px auto;
     background: black;
     border-radius: 5px;
     overflow: hidden;
-    padding-bottom: 0px;
+    aspect-ratio: 16/9;
 }
 
 .container-player video {
     width: 100%;
+    height: 100%;
     display: block;
+   
+}
+
+.container-player.fullscreen video {
+    width: 100%;
+    height: 100%;
 }
 
 .wrapper {
@@ -406,7 +413,7 @@ body {
     width: 100%;
 }
 
-.playback-content:hover .speed-options {
+.playback-content .speed-options.show{
     opacity: 1;
     pointer-events: auto;
 }
