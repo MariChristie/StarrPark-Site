@@ -4,6 +4,8 @@ const progressBar = containerPlayer.querySelector(".progress-bar");
 const videoTimeline = containerPlayer.querySelector(".video-timeline");
 const volumeBtn = containerPlayer.querySelector(".volume i");
 const volumeSlider = containerPlayer.querySelector(".volume-slider");
+const currentVidTime = containerPlayer.querySelector(".current-time")
+const videoDuration = containerPlayer.querySelector(".video-duration")
 const skipBacward = containerPlayer.querySelector(".skip-backward i");
 const skipForward = containerPlayer.querySelector(".skip-forward i");
 const playPauseBtn = containerPlayer.querySelector(".play-pause i");
@@ -12,15 +14,59 @@ const speedOptions = containerPlayer.querySelector(".speed-options");
 const picInPicBtn = containerPlayer.querySelector(".pic-in-pic");
 const fullscreenBtn = containerPlayer.querySelector(".fullscreen i");
 
+const formatTime = time => {
+    let seconds = Math.floor(time % 60),
+    minutes = Math.floor(time / 60) % 60,
+    hours = Math.floor(time / 3600);
+
+    seconds = seconds < 10 ? `0${seconds}` : seconds;
+    minutes = minutes < 10 ? `0${minutes}` : minutes;
+    hours = hours < 10 ? `0${hours}` : hours;
+
+    if(hours == 0) {
+        return `${minutes}:${seconds}`;
+    }
+    return `${hours}:${minutes}:${seconds}`;
+}
+
 playerVideo.addEventListener("timeupdate", (e) => {
     let { currentTime, duration } = e.target;
     let percent = (currentTime / duration) * 100;
     progressBar.style.width = `${percent}%`;
+    currentVidTime.innerText = formatTime(currentTime);
+});
+
+playerVideo.addEventListener("loadeddata", e => {
+    videoDuration.innerText = formatTime(e.target.duration);
 });
 
 videoTimeline.addEventListener("click", e => {
     let timelineWidth = e.target.clientWidth;
     playerVideo.currentTime = (e.offsetX / timelineWidth) * playerVideo.duration;
+});
+
+const draggableProgressBar = (e) => {
+    let timelineWidth = e.target.clientWidth;
+    progressBar.style.width = `${e.offsetX}px`;
+    playerVideo.currentTime = (e.offsetX / timelineWidth) * playerVideo.duration;
+    currentVidTime.innerText = formatTime(playerVideo.currentTime);
+}
+
+videoTimeline.addEventListener("mousedown", () => {
+    videoTimeline.addEventListener("mousemove", draggableProgressBar);
+});
+
+containerPlayer.addEventListener("mouseup", () => {
+    videoTimeline.removeEventListener("mousemove", draggableProgressBar);
+});
+
+videoTimeline.addEventListener("mousemove", e => {
+    const progressTime = videoTimeline.querySelector("span");
+    let offsetX = e.offsetX;
+    progressTime.style.left = `${offsetX}px`;
+    let timelineWidth = videoTimeline.clientWidth;
+    let percent = (e.offsetX / timelineWidth) * playerVideo.duration;
+    progressTime.innerText = formatTime(percent);
 });
 
 volumeBtn.addEventListener("click", () => {
