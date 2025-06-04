@@ -26,28 +26,7 @@
 
         <a href="login.html" class="fazer-login">Sign in</a>
     </header>
-    
-<div class="container">
 
-    <div class="main-video">
-        <div class="video">
-            <video src="/video/gameplay1.mp4"controls autoplay muted></video>
-            <h3 class="title">Show my Brawlers </h3>
-        </div>
-    </div>
-
-    <div class="video-list">
-        <div class="vid">
-            <video src="/video/gameplay1.mp4" muted></video>
-            <h3 class="title">02. video title</h3>
-        </div>
-        <div class="vid">
-            <video src="/video/gameplay3.mp4"muted></video>
-            <h3 class="title">03. video title</h3>
-        </div>    
-    </div>
-
-</div>
 
 <script>
 
@@ -72,7 +51,8 @@ videoItems.forEach(video =>{
 </script>
 
     <div class="container-player">
-        <video src="/video/brian.mp4"></video>
+        <video class="player" controls autoplay muted></video>
+        <h3 class="video-title">Select video</h3>
         <div class="wrapper">
             <div class="video-timeline">
                 <div class="progress-area">
@@ -116,6 +96,21 @@ videoItems.forEach(video =>{
             </ul>
         </div>
     </div>
+
+<div class="container">
+
+    <div class="video-list">
+        <div class="vid">
+            <video src="/video/gameplay1.mp4" muted></video>
+            <h3 class="title">02. video title</h3>
+        </div>
+        <div class="vid">
+            <video src="/video/gameplay3.mp4"muted></video>
+            <h3 class="title">03. video title</h3>
+        </div>    
+    </div>
+
+</div>
 
     <script src="/js/video.js"></script>
 

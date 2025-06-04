@@ -13,6 +13,23 @@ const speedBtn = containerPlayer.querySelector(".playback-speed span");
 const speedOptions = containerPlayer.querySelector(".speed-options");
 const picInPicBtn = containerPlayer.querySelector(".pic-in-pic");
 const fullscreenBtn = containerPlayer.querySelector(".fullscreen i");
+const videoItems = document.querySelectorAll('.video-list .vid');
+const mainVideo = document.querySelector('.player');
+const mainTitle = document.querySelector('.video-title');
+
+videoItems.forEach(video =>{
+    video.onclick = () =>{
+        videoItems.forEach(vid => vid.classList.remove('active'));
+        video.classList.add('active');
+
+        const src = video.children[0].getAttribute('src');
+        const text = video.children[1].innerHTML;
+        
+        mainVideo.src = src;
+        mainTitle.innerHTML = text;
+        mainVideo.play();
+    };
+});
 
 const formatTime = time => {
     let seconds = Math.floor(time % 60),
@@ -141,3 +158,6 @@ playerVideo.addEventListener("pause", () => {
     playPauseBtn.classList.replace("fa-pause", "fa-play");
 });
 
+if (videoItems.length > 0) {
+    videoItems[0].click();
+}
