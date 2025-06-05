@@ -1,5 +1,3 @@
-
-
 .header {
     display: flex;
     justify-content: space-between;
@@ -51,28 +49,25 @@
 }
 
 * {
-    margin: 0; padding:0;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     text-transform: capitalize;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: normal;
 } 
 
-.heading{
-    color:rgb(96, 91, 218);
-    font-size: 40px;
-    text-align: center;
-    padding: 10px;
+body {
+    min-height: 100vh; 
+    background-color: rgb(8, 125, 160);
+    margin: 0;
+    font-family: sans-serif;
+    overflow-x: hidden;
+    display: block; 
 }
 
 /* Import Google font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
 
 .container {
     display: grid;
@@ -82,57 +77,64 @@
 }
 
 .main-video {
-    background: rgb(8, 125, 160);
+    background: transparent;
     border-radius: 10px;
+    padding: 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
 .main-video video{
-    box-shadow: 0 0 20px rgb(8, 79, 136);
     width: 100%;
     border-radius: 10px;
+    display: block;
 
 }
 
-.main-video .title{
+.main-title {
     color: rgb(255, 255, 255);
     font-size: 23px;
-    margin-top: 10px;
+    text-align: left; 
+    margin-top: 15px;
+    padding: 0 15px; 
+    font-weight: 500;
+    order: unset;
 }
 
 .video-list{
     background: rgb(8, 125, 160);
     border: 1px solid rgb(255, 238, 0);
-    width: 450px;
-    padding: 10px;
-    min-height: 100px;
-    max-height: 520px;
-    height: auto;
+    padding: 15px;
+    max-height: 720px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     border-radius: 20px;
-    gap: 10px;
-    color: rgb(255, 255, 255);
+    gap: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.container .video-list::-webkit-scrollbar {
-    width: 7px;
+.video-list::-webkit-scrollbar {
+    width: 8px;
 }
 
-.container .video-list::-webkit-scrollbar-track {
+.video-list::-webkit-scrollbar-track {
     background: rgb(0, 0, 0);
-    border-radius: 50px;
+    border-radius: 10px;
 
 }
 
-.container .video-list::-webkit-scrollbar-thumb {
+.video-list::-webkit-scrollbar-thumb {
     background: #ccc;
-    border-radius: 50px;
+    border-radius: 10px;
 
 }
 
 .video-list .vid{
-    flex: 0 0 auto;
+    display: flex;
     margin-right: 8px;
     display: flex;
     align-items: center;
@@ -141,24 +143,29 @@
     padding: 10px;
     border-radius: 8px;
     border: 2px solid transparent;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
-.video-list .vid video {
-    width: 100px;
-    border-radius: 5px;
-}
-
-.container .video-list .vid.hover{
+.video-list .vid.hover{
     background: rgb(8, 125, 160);
 }
 
-.container .video-list .vid.active{
+.video-list .vid.active{
     background:rgb(96, 91, 218);
     border-color:rgb(8, 125, 160);
 }
 
-.container .video-list .vid.acitve .title{
+.video-list .vid video {
+    width: 120px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.video-list .vid:hover video {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.video-list .vid.active .title {
     color: rgb(255, 255, 255);
     font-size: 17px;
 }
@@ -172,43 +179,47 @@
         flex-direction: row;
         overflow-x: auto;
         max-height: none;
+        padding-bottom: 10px;
     }
 
     .video-list .vid {
         flex: 0 0 auto;
-        width: 150px;
-        flex-direction: column;
-        align-items: center;
-        margin-right: 10px;
-
+        max-width: 100px;
+        text-align: center;
     }
 
     .video-list .vid video {
         width: 100%;
+        max-width: 160px;
     }
 
     .video-list .vid .title {
-        font-size: 14px;
-        text-align: center;
-
+        color: white;
+        font-size: 15px;
+        margin: 0;
+        font-weight: 500;
     }
 }
 
-body {
-    min-height: 100vh; 
-    background-color: rgb(8, 125, 160);
-    margin: 0;
-    font-family: sans-serif;
-    overflow-x: hidden;
-    display: block; 
+.wrapper {
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 0 0 10px 10px;
+    padding: 10px 15px;
+    position: absolute; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
 }
 
 .container-player {
     position: relative;
     max-width: 900px;
     width: 100%;
-    margin: 20px auto;
-    background: black;
+    margin: 20px auto 10px; 
+    background: transparent;
     border-radius: 5px;
     overflow: hidden;
     aspect-ratio: 16/9;
@@ -224,16 +235,6 @@ body {
 .container-player.fullscreen video {
     width: 100%;
     height: 100%;
-}
-
-.wrapper {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0px;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
 }
 
 .container-player:hover .wrapper {
@@ -254,23 +255,47 @@ body {
 .video-controls {
     display: flex;
     justify-content: space-between;
-    padding: 10px 20px;
     align-items: center;
-    padding: 10px 20px;
     width: 100%;
 }
 
-.options button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    padding: 5px;
+.options {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
+
+.options button {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 0 5px;
+  transition: all 0.2s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.options button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.volume-slider {
+    width: 80px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+
 .video-timeline {
-    padding: 10px 20px;
+    margin-bottom: 10px;
     cursor: pointer;
 }
 
@@ -283,12 +308,9 @@ body {
 .progress-area {
     height: 5px;
     background: rgba(255,255,255,0.2);
+    margin-bottom: 10px;
     border-radius: 3px;
     position: relative;
-    overflow: hidden;
-    position: absolute; 
-    left: 0; 
-    top: 0; 
 }
 
 .progress-bar {
@@ -301,13 +323,15 @@ body {
 
 .progress-area .progress-bar::before{
     content: "";
+    position: absolute;
     right: 0;
     top: 50%;
-    height: 13px;
-    width: 13px;
+    height: 12px;
+    width: 12px;
     background: inherit;
-    position: absolute;
     border-radius: 50%;
+    opacity: 0;
+    transition: opaciy 0.2s ease;
     transform: translateY(-50%);
 }
 
@@ -459,9 +483,9 @@ body {
     padding: 5px 15px;
     color: white;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .speed-options li.active{
-    color: white;
     background: black;
 }

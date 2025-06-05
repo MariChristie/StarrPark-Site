@@ -1,18 +1,21 @@
-const containerPlayer = document.querySelector(".container-player");
-const playerVideo = containerPlayer.querySelector("video");
-const progressBar = containerPlayer.querySelector(".progress-bar");
-const videoTimeline = containerPlayer.querySelector(".video-timeline");
-const volumeBtn = containerPlayer.querySelector(".volume i");
-const volumeSlider = containerPlayer.querySelector(".volume-slider");
-const currentVidTime = containerPlayer.querySelector(".current-time")
-const videoDuration = containerPlayer.querySelector(".video-duration")
-const skipBacward = containerPlayer.querySelector(".skip-backward i");
-const skipForward = containerPlayer.querySelector(".skip-forward i");
-const playPauseBtn = containerPlayer.querySelector(".play-pause i");
-const speedBtn = containerPlayer.querySelector(".playback-speed span");
-const speedOptions = containerPlayer.querySelector(".speed-options");
-const picInPicBtn = containerPlayer.querySelector(".pic-in-pic");
-const fullscreenBtn = containerPlayer.querySelector(".fullscreen i");
+const container = document.querySelector(".container");
+const playerVideo = container.querySelector("video");
+const progressBar = container.querySelector(".progress-bar");
+const videoTimeline = container.querySelector(".video-timeline");
+const volumeBtn = container.querySelector(".volume i");
+const volumeSlider = container.querySelector(".volume-slider");
+const currentVidTime = container.querySelector(".current-time")
+const videoDuration = container.querySelector(".video-duration")
+const skipBacward = container.querySelector(".skip-backward i");
+const skipForward = container.querySelector(".skip-forward i");
+const playPauseBtn = container.querySelector(".play-pause i");
+const speedBtn = container.querySelector(".playback-speed span");
+const speedOptions = container.querySelector(".speed-options");
+const picInPicBtn = container.querySelector(".pic-in-pic");
+const fullscreenBtn = container.querySelector(".fullscreen i");
+const videoItems = document.querySelectorAll('.video-list .vid');
+const mainVideo = document.querySelector('.main-video video');
+const mainTitle = document.querySelector('.main-title');
 
 const formatTime = time => {
     let seconds = Math.floor(time % 60),
@@ -28,6 +31,20 @@ const formatTime = time => {
     }
     return `${hours}:${minutes}:${seconds}`;
 }
+
+videoItems.forEach(video =>{
+    video.onclick = () =>{
+        videoItems.forEach(vid => vid.classList.remove('active'));
+        video.classList.add('active');
+
+        const src = video.children[0].getAttribute('src');
+        const text = video.children[1].innerHTML;
+        
+        mainVideo.src = src;
+        mainTitle.innerHTML = text;
+        mainVideo.play();
+    };
+});
 
 playerVideo.addEventListener("timeupdate", (e) => {
     let { currentTime, duration } = e.target;
@@ -46,7 +63,7 @@ videoTimeline.addEventListener("click", e => {
 });
 
 const draggableProgressBar = (e) => {
-    let timelineWidth = e.target.clientWidth;
+    let timelineWidth = videoTimeline.clientWidth;
     progressBar.style.width = `${e.offsetX}px`;
     playerVideo.currentTime = (e.offsetX / timelineWidth) * playerVideo.duration;
     currentVidTime.innerText = formatTime(playerVideo.currentTime);
@@ -56,7 +73,7 @@ videoTimeline.addEventListener("mousedown", () => {
     videoTimeline.addEventListener("mousemove", draggableProgressBar);
 });
 
-containerPlayer.addEventListener("mouseup", () => {
+container.addEventListener("mouseup", () => {
     videoTimeline.removeEventListener("mousemove", draggableProgressBar);
 });
 
@@ -112,13 +129,13 @@ picInPicBtn.addEventListener("click", () => {
 });
 
 fullscreenBtn.addEventListener("click", () => {
-    containerPlayer.classList.toggle("fullscreen");
+    container.classList.toggle("fullscreen");
     if(document.fullscreenElement) {
         fullscreenBtn.classList.replace("fa-compress", "fa-expand");
         return document.exitFullscreen();
     }
     fullscreenBtn.classList.replace("fa-expand", "fa-compress");
-    containerPlayer.requestFullscreen();
+    container.requestFullscreen();
 });
 
 skipBacward.addEventListener("click", () => {
