@@ -1,7 +1,30 @@
+const hamMenu = document.querySelector('.ham-menu');
+const offScreenMenu = document.querySelector('.off-screen-menu');
+const menuOverlay = document.querySelector('.menu-overlay');
+
+hamMenu.addEventListener('click', () => {
+    hamMenu.classList.toggle('active');
+    offScreenMenu.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
+});
+
+menuOverlay.addEventListener('click', () => {
+    hamMenu.classList.remove('active');
+    offScreenMenu.classList.remove('active');
+    menuOverlay.classList.remove('active');
+});
+
+document.querySelectorAll('.off-screen-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamMenu.classList.remove('active');
+        offScreenMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+    });
+});
+
 const tabs = document.querySelectorAll(".container-filtro a");
 const rightArrow = document.querySelector(".container-filtro .right-arrow");
-const leftArrow = document.querySelector (".container-filtro .left-arrow");
-
+const leftArrow = document.querySelector(".container-filtro .left-arrow");
 const tabsList = document.querySelector(".container-filtro ul");
 
 const removeAllActiveClasses = () => {
@@ -12,7 +35,6 @@ const removeAllActiveClasses = () => {
 
 const showHideArrows = () => {
     const maxScrollLeft = tabsList.scrollWidth - tabsList.clientWidth;
-
     leftArrow.style.display = tabsList.scrollLeft > 0 ? "flex" : "none";
     rightArrow.style.display = tabsList.scrollLeft < maxScrollLeft ? "flex" : "none";
 };
@@ -24,37 +46,18 @@ tabs.forEach((tab) => {
     });
 });
 
-const manageIcons = () => {
-    if (tabsList.scrollLeft >= 20) {
-        leftArrowContainer.classList.add("active");
-        } else {
-            leftArrowContainer.classList.remove("active");
-    }
-
-    let maxScrollValue = tabsList.scrollWidth - tabsList.clientWidth - 20;
-    console.log("scroll width: ", tabsList.scrollWidth);
-    console.log("client width: ", tabsList.clientWidth);
-
-    if (tabsList.scrollLeft >= maxScrollValue) {
-        rightArrowContainer.classList.remove("active");
-    } else { 
-        rightArrowContainer.classList.add("active");
-    }
-};
-
 rightArrow.addEventListener("click", () => {
     tabsList.scrollLeft += 200;
-setTimeout(showHideArrows, 100); 
+    setTimeout(showHideArrows, 100); 
 });
 
 leftArrow.addEventListener("click", () => {
     tabsList.scrollLeft -= 200;
-setTimeout(showHideArrows, 100); 
+    setTimeout(showHideArrows, 100); 
 });
 
-tabsList.addEventListener("scroll", manageIcons);
 window.addEventListener("load", showHideArrows);       
-window.addEventListener("resize", showHideArrows);   
+window.addEventListener("resize", showHideArrows);
 
 let dragging = false;
 
@@ -74,12 +77,3 @@ document.addEventListener("mouseup", () => {
     dragging = false;
     tabsList.classList.remove("dragging");
 });
-
-const hamMenu = document.querySelector('.ham-menu');
-
-const offScreenMenu = document.querySelector('.off-screen-menu');
-
-hamMenu.addEventListener('click', () => {
-    hamMenu.classList.toggle('active');
-    offScreenMenu.classList.toggle('active');
-})

@@ -10,8 +10,6 @@
 </head>
 <body>
 
-<header class="header">
-
     <div class="off-screen-menu">
         <ul>
             <li><a href="#"><i class="fas fa-house"></i> Home</a></li>
@@ -41,100 +39,107 @@
             <li><a href="#"><i class="fas fa-comment-dots"></i> Send feedback</a></li>
         </ul>
     </div>
-    
-    <nav>
-      <div class="ham-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div> 
-    </nav>
-        <a href="home.html">
-            <img src="../imagens/colette.png" class="colette" alt="Logo Colette">
-        </a>
 
-        <div class="search-box">
-            <input type="text" class="search-text" placeholder="Search">
-        </div>
+    <div class="menu-overlay"></div>
 
-        <a href="login.html" class="fazer-login">Sign in</a>
-    </header>
+    <div class="content-wrapper">
+        <header class="header">
+            <nav>
+                <div class="ham-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+                </div> 
+            </nav>
 
+                <a href="home.html">
+                    <img src="../imagens/colette.png" class="colette" alt="Logo Colette">
+                </a>
 
-    <div class="container-filtro">
-        <div class="right-arrow active">
+                <div class="search-box">
+                    <input type="text" class="search-text" placeholder="Search">
+                </div>
+
+                <a href="login.html" class="fazer-login">Sign in</a>
+        </header>
+
+        <div class="container-filtro">
+            <div class="right-arrow active">
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke-width="1.5" 
+                stroke="currentColor" 
+                class="size-6">
+                <path stroke-linecap="round" 
+                stroke-linejoin="round" 
+                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+            </div>
+        <ul>
+            <li>
+                <a href="#" class="active">All</a>
+            </li>
+
+            <li>
+                <a href="#">Tutorial</a>
+            </li>
+            <li>
+                <a href="#">Gameplay</a>
+            </li>
+            <li>
+                <a href="#">Lore</a>
+            </li>
+            <li>
+                <a href="#">Tierlist</a>
+            </li>
+            <li>
+                <a href="#">Meta</a>
+            </li>
+            <li>
+                <a href="#">Artwork</a>
+            </li>
+            <li>
+                <a href="#">Animation</a>
+            </li>
+            <li>
+                <a href="#">Colette</a>
+            </li>
+            <li>
+                <a href="#">Melodie</a>
+            </li>
+            <li>
+                <a href="#">Merch</a>
+            </li>
+            <li>
+                <a href="#">Cosplay</a>
+            </li>
+            <li>
+                <a href="#">Tournament</a>
+            </li>
+            <li>
+                <a href="#">Highlights</a>
+            </li>
+            <li>
+                <a href="#">News</a>
+            </li>
+        </ul>
+
+        <div class="left-arrow">
             <svg xmlns="http://www.w3.org/2000/svg" 
             fill="none" 
             viewBox="0 0 24 24" 
             stroke-width="1.5" 
-            stroke="currentColor" 
-            class="size-6">
-              <path stroke-linecap="round" 
+            stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" 
             stroke-linejoin="round" 
-            d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            d="M15.75 19.5 8.25 12l7.5-7.5" />
             </svg>
         </div>
-    <ul>
-        <li>
-            <a href="#" class="active">All</a>
-        </li>
 
-        <li>
-            <a href="#">Tutorial</a>
-        </li>
-        <li>
-            <a href="#">Gameplay</a>
-        </li>
-        <li>
-            <a href="#">Lore</a>
-        </li>
-        <li>
-            <a href="#">Tierlist</a>
-        </li>
-        <li>
-            <a href="#">Meta</a>
-        </li>
-        <li>
-            <a href="#">Artwork</a>
-        </li>
-        <li>
-            <a href="#">Animation</a>
-        </li>
-        <li>
-            <a href="#">Colette</a>
-        </li>
-        <li>
-            <a href="#">Melodie</a>
-        </li>
-        <li>
-            <a href="#">Merch</a>
-        </li>
-        <li>
-            <a href="#">Cosplay</a>
-        </li>
-        <li>
-            <a href="#">Tournament</a>
-        </li>
-        <li>
-            <a href="#">Highlights</a>
-        </li>
-        <li>
-            <a href="#">News</a>
-        </li>
-    </ul>
-
-    <div class="left-arrow">
-        <svg xmlns="http://www.w3.org/2000/svg" 
-        fill="none" 
-        viewBox="0 0 24 24" 
-        stroke-width="1.5" 
-        stroke="currentColor" class="size-6">
-        <path stroke-linecap="round" 
-        stroke-linejoin="round" 
-        d="M15.75 19.5 8.25 12l7.5-7.5" />
-        </svg>
     </div>
 
 <script src="/js/home.js"></script>
+
 </body>
 </html>
